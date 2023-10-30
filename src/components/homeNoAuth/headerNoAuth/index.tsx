@@ -1,5 +1,6 @@
 import { Container, Button } from 'reactstrap';
 import styles from './styles.module.scss';
+import Link from 'next/link';
 
 const HeaderNoAuth = () => {
   return (
@@ -18,12 +19,24 @@ const HeaderNoAuth = () => {
         />
       </div>
 
-      <Container>
-        <img src="/logoOnebitflix.svg" alt="logoOnebitflix" />
+      <Container className={styles.nav}>
+        <img
+          src="/logoOnebitflix.svg"
+          alt="logoOnebitflix"
+          className={styles.imgLogoNav}
+        />
         <div>
-          <Button outline color="primary">
-            Entrar
-          </Button>
+          <Link href="/login">
+            <Button className={styles.navBtn} outline>
+              Entrar
+            </Button>
+          </Link>
+
+          <Link href="/register">
+            <Button className={styles.navBtn} outline>
+              Quero fazer parte
+            </Button>
+          </Link>
         </div>
       </Container>
     </>
